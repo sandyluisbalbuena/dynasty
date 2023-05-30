@@ -23,6 +23,9 @@ function isValidRomanNumeral(input) {
 let errorMessage = "";
 
 form.addEventListener('submit', ()=>{
+
+
+
 	event.preventDefault();
 
 	highestbtn.removeAttribute('disabled');
@@ -128,7 +131,7 @@ function longestDynasty(){
 			longestReignName = dynasties[i][0];
 		}
 	}
-
+	highestbtn.setAttribute('disabled', '');
 	result.style.display="block";
 	result.innerHTML = "Longest Dynasty is "+ longestReignName + " with "+ longestReignLength+ " years.";
 }
