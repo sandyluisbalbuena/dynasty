@@ -25,7 +25,7 @@ let errorMessage = "";
 
 form.addEventListener('submit', ()=>{
 
-	event.preventDefault();submitform
+	event.preventDefault();
 
 	highestbtn.removeAttribute('disabled');
 	submitformbtn.setAttribute('disabled', '');
@@ -103,15 +103,16 @@ function convertRomanToNumber(roman) {
 	let previousValue = 0;
 
 	for (let i = roman.length - 1; i >= 0; i--) {
-	const current = romanNumerals[roman[i]];
+		
+		const current = romanNumerals[roman[i]];
 
-	if (current >= previousValue) {
-		result += current;
-	} else {
-		result -= current;
-	}
+		if (current >= previousValue) {
+			result += current;
+		} else {
+			result -= current;
+		}
 
-	previousValue = current;
+		previousValue = current;
 	}
 
 	return result;
@@ -131,6 +132,7 @@ function longestDynasty(){
 			longestReignName = dynasties[i][0];
 		}
 	}
+
 	highestbtn.setAttribute('disabled', '');
 	submitformbtn.removeAttribute('disabled');
 
