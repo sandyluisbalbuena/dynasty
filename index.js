@@ -8,6 +8,7 @@ let p6 = document.getElementById('product6');
 let p7 = document.getElementById('product7');
 let result = document.getElementById('result');
 let highestbtn = document.getElementById('highestbtn');
+let submitformbtn = document.getElementById('submitformbtn');
 let longestReignName = "";
 let longestReignLength = 0;
 
@@ -24,11 +25,10 @@ let errorMessage = "";
 
 form.addEventListener('submit', ()=>{
 
-
-
-	event.preventDefault();
+	event.preventDefault();submitform
 
 	highestbtn.removeAttribute('disabled');
+	submitformbtn.setAttribute('disabled', '');
 
 	if(isValidRomanNumeral(p1.value.toUpperCase())){
 		dynasties.push(['San Dynasty', p1.value.toUpperCase()]);
@@ -132,6 +132,8 @@ function longestDynasty(){
 		}
 	}
 	highestbtn.setAttribute('disabled', '');
+	submitformbtn.removeAttribute('disabled');
+
 	result.style.display="block";
 	result.innerHTML = "Longest Dynasty is "+ longestReignName + " with "+ longestReignLength+ " years.";
 }
